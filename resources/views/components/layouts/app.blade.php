@@ -31,14 +31,14 @@
 
     <!-- Desktop Sidebar -->
     <div class="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-72 lg:flex-col">
-        <div class="flex flex-col px-6 pb-4 overflow-y-auto bg-white border-r border-slate-200 grow gap-y-5">
-            <div class="flex items-center h-16 shrink-0">
-                <span class="text-2xl font-bold tracking-tight text-indigo-600">Nexus<span class="text-slate-900">Flow</span></span>
+        <div class="flex flex-col px-8 pb-4 overflow-y-auto bg-white/70 backdrop-blur-xl border-r border-slate-100 grow gap-y-6">
+            <div class="flex items-center h-20 shrink-0">
+                <span class="text-2xl premium-heading text-indigo-600">Nexus<span class="text-slate-900">Flow</span></span>
             </div>
             <nav class="flex flex-col flex-1">
                 <ul role="list" class="flex flex-col flex-1 gap-y-7">
                     <li>
-                        <ul role="list" class="-mx-2 space-y-1">
+                        <ul role="list" class="-mx-2 space-y-1.5">
                             <x-layout.nav-link href="/" icon="home" :active="request()->is('/')">Dashboard</x-layout.nav-link>
                             <x-layout.nav-link href="/marketing" icon="marketing" :active="request()->is('marketing*')">@lang('messages.marketing')</x-layout.nav-link>
                             <x-layout.nav-link href="/mentoring" icon="mentoring" :active="request()->is('mentoring*')">@lang('messages.mentoring')</x-layout.nav-link>
@@ -53,7 +53,7 @@
     <!-- Main Content -->
     <div class="lg:pl-72">
         <!-- Sticky Navbar -->
-        <div class="sticky top-0 z-40 flex items-center h-16 px-4 bg-white border-b border-slate-200 shrink-0 gap-x-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
+        <div class="sticky top-0 z-40 flex items-center h-20 px-4 bg-white/50 backdrop-blur-md border-b border-slate-100 shrink-0 gap-x-4 sm:gap-x-6 sm:px-6 lg:px-10">
             <button type="button" class="-m-2.5 p-2.5 text-slate-700 lg:hidden" @click="sidebarOpen = true">
                 <span class="sr-only">Open sidebar</span>
                 <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -66,7 +66,7 @@
 
             <div class="flex self-stretch flex-1 gap-x-4 lg:gap-x-6">
                 <div class="flex items-center flex-1">
-                    <h1 class="text-lg font-semibold text-slate-900">{{ $header ?? 'Overview' }}</h1>
+                    <h1 class="text-xl premium-heading text-slate-900">{{ $header ?? 'Overview' }}</h1>
                 </div>
                 <div class="flex items-center gap-x-4 lg:gap-x-6">
                     
