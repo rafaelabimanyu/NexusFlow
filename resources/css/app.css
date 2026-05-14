@@ -31,4 +31,27 @@
         transform: scale(1.02);
         border-color: rgb(224 231 255);
     }
+
+    .glass-button {
+        @apply inline-flex items-center justify-center rounded-2xl px-6 py-3 text-sm font-bold transition-all duration-300 active:scale-95 disabled:opacity-50;
+        background-color: rgb(255 255 255 / 0.8);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgb(241 245 249);
+        color: rgb(15 23 42);
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+    }
+
+    .glass-button:hover {
+        background-color: rgb(255 255 255 / 1);
+        border-color: rgb(99 102 241 / 0.2);
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+    }
+
+    .glass-button-primary {
+        @apply bg-indigo-600 text-white border-transparent shadow-indigo-200/50 hover:bg-indigo-500 hover:shadow-indigo-300/50;
+    }
+
+    .pastel-badge {
+        @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider;
+    }
 }

@@ -44,6 +44,8 @@ class CreateLead extends Component
 
             $marketingService->createLeadWithTask($dto);
 
+            $this->dispatch('leadAdded');
+
             session()->flash('success', 'Lead berhasil dibuat dan tugas follow-up telah dijadwalkan!');
             
             $this->reset(['name', 'email', 'phone', 'notes']);
