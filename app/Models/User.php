@@ -10,7 +10,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-#[Fillable(['name', 'email', 'password'])]
+use App\Enums\UserRole;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+#[Fillable(['name', 'email', 'password', 'role', 'lang', 'avatar', 'bio'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
@@ -27,6 +30,27 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'role' => UserRole::class,
         ];
+    }
+
+    public function marketingLeads(): HasMany
+    {
+        return $this->hasMany(MarketingLead::class, 'marketer_id');
+    }
+
+    public function mentoringAsMentor(): HasMany
+    {
+        return $this->hasMany(MentoringSession::class, 'mentor_id');
+    }
+
+    public function mentoringAsMember(): HasMany
+    {
+        return $this->hasMany(MentoringSession::class, 'member_id');
+    }
+
+    public function tasks(): HasMany
+    {
+        return $this->hasMany(Task::class, 'assigned_to');
     }
 }
