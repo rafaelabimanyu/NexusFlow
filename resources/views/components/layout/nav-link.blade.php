@@ -7,7 +7,7 @@ $classes = ($active ?? false)
 @endphp
 
 <li>
-    <a {{ $attributes->merge(['class' => $classes]) }}>
+    <a href="{{ $href }}" wire:navigate {{ $attributes->merge(['class' => $classes]) }}>
         <div class="flex items-center shrink-0">
             @if($icon === 'home')
                 <svg class="size-6 {{ $active ? 'text-indigo-600' : 'text-slate-400 group-hover:text-indigo-600' }}" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">

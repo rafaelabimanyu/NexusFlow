@@ -7,8 +7,16 @@
         @endif
 
         @if (session()->has('error'))
-            <div class="rounded-xl bg-rose-50 p-4 border border-rose-200">
-                <p class="text-sm font-medium text-rose-800">{{ session('error') }}</p>
+            <div class="rounded-[20px] bg-rose-50/50 backdrop-blur-sm p-5 border border-rose-100 flex gap-x-4 items-start animate-shake">
+                <div class="bg-rose-500 p-1.5 rounded-full text-white shrink-0">
+                    <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-sm font-bold text-rose-800">Bentrok Jadwal Terdeteksi</p>
+                    <p class="text-xs font-medium text-rose-600 mt-1 leading-relaxed">{{ session('error') }}</p>
+                </div>
             </div>
         @endif
 

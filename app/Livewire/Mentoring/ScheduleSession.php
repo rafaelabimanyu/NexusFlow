@@ -46,6 +46,8 @@ class ScheduleSession extends Component
 
             $mentoringService->scheduleSession($dto);
 
+            $this->dispatch('sessionScheduled');
+
             session()->flash('success', 'Sesi mentoring berhasil dijadwalkan!');
             
             $this->reset(['title', 'scheduled_at', 'duration', 'meeting_link']);
