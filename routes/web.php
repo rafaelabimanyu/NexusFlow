@@ -12,3 +12,11 @@ Route::get('lang/{locale}', function ($locale) {
     }
     return redirect()->back();
 })->name('lang.switch');
+
+Route::get('/marketing', function () {
+    return view('marketing.index');
+});
+
+Route::get('/mentoring', function () {
+    return view('mentoring.index');
+});
